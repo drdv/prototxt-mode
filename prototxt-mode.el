@@ -59,8 +59,11 @@
   "Syntax table for `prototxt-mode'.")
 
 ;;;###autoload
-;; we could inherit from json-mode instead of perl-mode but I don't like the
-;; default indentation of comments in json-mode
+;; The most obvious thing would be to inherit from prototxt-mode, but I had
+;; problems with it.
+;;
+;; We could inherit from json-mode instead of perl-mode but I don't like the
+;; default indentation of comments in json-mode.
 (define-derived-mode prototxt-mode perl-mode "prototxt" ;; reuse indentation
   (setq font-lock-defaults '(prototxt-mode-font-lock-keywords))
   (set (make-local-variable 'comment-start) "#") ;; required to use M-;
