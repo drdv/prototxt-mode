@@ -23,12 +23,12 @@
 ;; prototxt are the files generated from google::protobuf::TextFormat::PrintToString
 ;; For more information see google/protobuf/text_format.h
 ;;
-;; Note that this mode inherits from `perl-mode', hence one could
+;; Note that this mode inherits from `json-mode', hence one could
 ;; customize the indentation level by placing the following in .emacs:
 ;;
 ;; (add-hook 'prototxt-mode-hook
 ;;	  (lambda()
-;;	    (setq perl-indent-level 2)))  ;; use 2-space indentation
+;;	    (setq js-indent-level 2)))  ;; use 2-space indentation
 ;;
 ;; I have found it useful to use `hs-minor-mode' for code folding:
 ;;
@@ -61,10 +61,7 @@
 ;;;###autoload
 ;; The most obvious thing would be to inherit from prototxt-mode, but I had
 ;; problems with it.
-;;
-;; We could inherit from json-mode instead of perl-mode but I don't like the
-;; default indentation of comments in json-mode.
-(define-derived-mode prototxt-mode perl-mode "prototxt" ;; reuse indentation
+(define-derived-mode prototxt-mode json-mode "prototxt" ;; reuse indentation
   (setq font-lock-defaults '(prototxt-mode-font-lock-keywords))
   (set (make-local-variable 'comment-start) "#") ;; required to use M-;
   (set-syntax-table prototxt-mode-font-lock-syntax-table))
