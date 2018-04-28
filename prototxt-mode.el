@@ -20,7 +20,7 @@
 ;; Package tested on:
 ;; GNU Emacs 25.3.1 (x86_64-apple-darwin17.0.0)
 ;;
-;; prototxt are the files generated from google::protobuf::TextFormat::ParseFromString
+;; prototxt are the files generated from google::protobuf::TextFormat::PrintToString
 ;; For more information see google/protobuf/text_format.h
 ;;
 ;; Note that this mode inherits from `perl-mode', hence one could

@@ -1,7 +1,7 @@
 # prototxt-mode for Emacs
 
 `prototxt-mode` is a major mode for editing prototxt files (i.e., files
-generated from google::protobuf::TextFormat::ParseFromString).
+generated from `google::protobuf::TextFormat::PrintToString`).
 
 # Installation:
 
