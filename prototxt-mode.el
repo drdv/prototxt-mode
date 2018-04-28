@@ -47,9 +47,13 @@
 ;;; Code:
 
 (defvar prototxt-mode-font-lock-keywords
-  '(("\\(.*\\)\s*{" . (1 font-lock-function-name-face))
-    ("^\s*.+:" . (0 font-lock-variable-name-face))
-    (":\s*\\(.*\\)" . (1 font-lock-type-face))))
+  (list
+   ;; message
+   '("\\(.*\\)\s*{" . (1 font-lock-function-name-face))
+   ;; key
+   '("\\(^\s*.*?\\):" . (0 font-lock-variable-name-face))
+   ;; value
+   '(":\s*\\(.*\\)" . (1 font-lock-type-face))))
 
 (defvar prototxt-mode-font-lock-syntax-table
   (let ((st (make-syntax-table)))
