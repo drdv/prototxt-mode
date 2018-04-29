@@ -16,4 +16,5 @@ indentation level by placing the following in `~/.emacs` or
 
 	(add-hook 'prototxt-mode-hook
 		(lambda()
+		    (make-local-variable 'js-indent-level)
 		    (setq js-indent-level 2)))  ;; use 2-space indentation

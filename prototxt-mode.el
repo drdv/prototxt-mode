@@ -28,6 +28,7 @@
 ;;
 ;; (add-hook 'prototxt-mode-hook
 ;;	  (lambda()
+;;          (make-local-variable 'js-indent-level)
 ;;	    (setq js-indent-level 2)))  ;; use 2-space indentation
 ;;
 ;; I have found it useful to use `hs-minor-mode' for code folding:
