@@ -10,8 +10,8 @@ to your `~/.emacs` or `~/.emacs.d/init.el`.
 
 # Notes:
 
-The default indentation is 2 spaces, however, one could customize the
-indentation level by placing the following in `~/.emacs` or `~/.emacs.d/init.el`:
+The default indentation level is 2 spaces, however, one could customize it by
+placing the following in `~/.emacs` or `~/.emacs.d/init.el`:
 
 	(add-hook 'prototxt-mode-hook
 		(lambda()

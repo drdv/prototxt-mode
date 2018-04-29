@@ -4,7 +4,7 @@
 
 ;; Author: Dimitar Dimitrov <mail.mitko@gmail.com>
 ;; URL: https://github.com/drdv/prototxt-mode
-;; Package-Version: 20180428.1
+;; Package-Version: 20180429.1
 ;; Package-X-Original-Version: 20180428.1
 ;; Package-Requires: ((emacs "24.3"))
 ;; Keywords: convenience, usability
@@ -23,8 +23,8 @@
 ;; prototxt are the files generated from google::protobuf::TextFormat::PrintToString
 ;; For more information see google/protobuf/text_format.h
 ;;
-;; The default indentation is 2 spaces, however, one could customize the
-;; indentation level by placing the following in .emacs:
+;; The default indentation level is 2 spaces, however, one could customize it by
+;; placing the following in .emacs:
 ;;
 ;; (add-hook 'prototxt-mode-hook
 ;;	  (lambda()
