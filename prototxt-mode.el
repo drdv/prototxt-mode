@@ -38,7 +38,10 @@
 ;;	    (local-set-key (kbd "C-c <left>" ) 'hs-hide-block)
 ;;	    (local-set-key (kbd "C-c <up>"   ) 'hs-hide-level)
 ;;	    (local-set-key (kbd "C-c <down>" ) 'hs-show-all)
+;;	    (local-set-key (kbd "C-c c" ) 'hs-hide-all-comments)
 ;;	    (hs-minor-mode 1)))
+;;
+;; hs-hide-all-comments: https://www.emacswiki.org/emacs/HideShow
 
 ;; Quick start:
 ;;
