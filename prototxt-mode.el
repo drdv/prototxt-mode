@@ -68,7 +68,7 @@
 (defvar prototxt-mode-indentation-level 2
   "Specify the indentation level (default: 2).")
 
-(defun prototxt-mode-indent-line ()
+(defun prototxt-mode-indent-line-function ()
   "Indent the current line according to depth of parentheses."
   (interactive)
   (let ((parse-status
@@ -79,7 +79,7 @@
 ;;;###autoload
 (define-derived-mode prototxt-mode fundamental-mode "prototxt"
   (setq font-lock-defaults '(prototxt-mode-font-lock-keywords))
-  (setq indent-line-function 'prototxt-mode-indent-line)
+  (setq indent-line-function 'prototxt-mode-indent-line-function)
   (set (make-local-variable 'comment-start) "#") ;; required to use M-;
   (set-syntax-table prototxt-mode-font-lock-syntax-table))
 
