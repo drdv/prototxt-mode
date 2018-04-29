@@ -16,3 +16,7 @@ placing the following in `~/.emacs` or `~/.emacs.d/init.el`:
 	(add-hook 'prototxt-mode-hook
 		(lambda()
 		    (setq prototxt-mode-indentation-level 4)))  ;; use 4-space indentation
+
+After writing `prototxt-mode.el`, I realized that a major mode for editing
+`prototxt` files was already available under the name `caffe-mode` which can be
+found [here](https://github.com/reggies/caffe-mode).
