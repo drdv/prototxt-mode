@@ -23,13 +23,12 @@
 ;; prototxt are the files generated from google::protobuf::TextFormat::PrintToString
 ;; For more information see google/protobuf/text_format.h
 ;;
-;; Note that this mode inherits from `json-mode', hence one could
-;; customize the indentation level by placing the following in .emacs:
+;; The default indentation is 2 spaces, however, one could customize the
+;; indentation level by placing the following in .emacs:
 ;;
 ;; (add-hook 'prototxt-mode-hook
 ;;	  (lambda()
-;;          (make-local-variable 'js-indent-level)
-;;	    (setq js-indent-level 2)))  ;; use 2-space indentation
+;;	    (setq prototxt-mode-indentation-level 4))) ;; use 4-space indentation
 ;;
 ;; I have found it useful to use `hs-minor-mode' for code folding:
 ;;
@@ -63,11 +62,21 @@
     st)
   "Syntax table for `prototxt-mode'.")
 
+(defvar prototxt-mode-indentation-level 2
+  "Specify the indentation level (default: 2).")
+
+(defun prototxt-mode-indent-line ()
+  "Indent the current line according to depth of parentheses."
+  (interactive)
+  (let ((parse-status
+	 (save-excursion (syntax-ppss (point-at-bol)))))
+    (indent-line-to (* prototxt-mode-indentation-level
+		       (nth 0 parse-status)))))
+
 ;;;###autoload
-;; The most obvious thing would be to inherit from prototxt-mode, but I had
-;; problems with it.
-(define-derived-mode prototxt-mode json-mode "prototxt" ;; reuse indentation
+(define-derived-mode prototxt-mode fundamental-mode "prototxt"
   (setq font-lock-defaults '(prototxt-mode-font-lock-keywords))
+  (setq indent-line-function 'prototxt-mode-indent-line)
   (set (make-local-variable 'comment-start) "#") ;; required to use M-;
   (set-syntax-table prototxt-mode-font-lock-syntax-table))
 

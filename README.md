@@ -10,11 +10,9 @@ to your `~/.emacs` or `~/.emacs.d/init.el`.
 
 # Notes:
 
-Note that this mode inherits from `json-mode`, hence one could customize the
-indentation level by placing the following in `~/.emacs` or
-`~/.emacs.d/init.el`:
+The default indentation is 2 spaces, however, one could customize the
+indentation level by placing the following in `~/.emacs` or `~/.emacs.d/init.el`:
 
 	(add-hook 'prototxt-mode-hook
 		(lambda()
-		    (make-local-variable 'js-indent-level)
-		    (setq js-indent-level 2)))  ;; use 2-space indentation
+		    (setq prototxt-mode-indentation-level 4)))  ;; use 4-space indentation
