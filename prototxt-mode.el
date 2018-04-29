@@ -58,8 +58,8 @@
 
 (defvar prototxt-mode-font-lock-syntax-table
   (let ((st (make-syntax-table)))
-    (modify-syntax-entry ?#  "< b" st)
-    (modify-syntax-entry ?\n ">#b" st)
+    (modify-syntax-entry ?# "<" st)
+    (modify-syntax-entry ?\n ">" st)
     st)
   "Syntax table for `prototxt-mode'.")
 
