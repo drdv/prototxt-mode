@@ -52,11 +52,11 @@
 (defvar prototxt-mode-font-lock-keywords
   (list
    ;; message
-   '("\\(.*\\)\s*{" . (1 font-lock-function-name-face))
+   '("\\(.*\\)\s-*{" . (1 font-lock-function-name-face))
    ;; key
-   '("\\(^\s*.*?\\):" . (0 font-lock-variable-name-face))
+   '("\\(^\s-*.*?\\):" . (0 font-lock-variable-name-face))
    ;; value
-   '(":\s*\\(.*\\)" . (1 font-lock-type-face))))
+   '(":\s-*\\(.*\\)" . (1 font-lock-type-face))))
 
 (defvar prototxt-mode-font-lock-syntax-table
   (let ((st (make-syntax-table)))
@@ -71,10 +71,9 @@
 (defun prototxt-mode-indent-line ()
   "Indent the current line according to depth of parentheses."
   (interactive)
-  (let ((parse-status
-	 (save-excursion (syntax-ppss (point-at-bol)))))
+  (let ((parse-status (save-excursion (syntax-ppss (point-at-bol)))))
     (indent-line-to (* prototxt-mode-indentation-level
-		       (nth 0 parse-status)))))
+		       (car parse-status)))))
 
 ;;;###autoload
 (define-derived-mode prototxt-mode fundamental-mode "prototxt"
