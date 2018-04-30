@@ -10,9 +10,13 @@ to your `~/.emacs` or `~/.emacs.d/init.el`.
 
 # Notes:
 
-The default indentation is 2 spaces, however, one could customize the
-indentation level by placing the following in `~/.emacs` or `~/.emacs.d/init.el`:
+The default indentation level is 2 spaces, however, one could customize it by
+placing the following in `~/.emacs` or `~/.emacs.d/init.el`:
 
 	(add-hook 'prototxt-mode-hook
 		(lambda()
 		    (setq prototxt-mode-indentation-level 4)))  ;; use 4-space indentation
+
+After writing `prototxt-mode.el`, I realized that a major mode for editing
+`prototxt` files was already available under the name `caffe-mode` which can be
+found [here](https://github.com/reggies/caffe-mode).
