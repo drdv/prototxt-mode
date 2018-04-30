@@ -71,9 +71,13 @@
 (defun prototxt-mode-indent-line-function ()
   "Indent the current line according to depth of parentheses."
   (interactive)
-  (let ((parse-status (save-excursion (syntax-ppss (point-at-bol)))))
+  (let ((parse-status (save-excursion (syntax-ppss (point-at-bol))))
+	(offset (if (looking-at " *}")
+		    1  ;; add offset to closing brace
+		  0)))
     (indent-line-to (* prototxt-mode-indentation-level
-		       (car parse-status)))))
+		       (- (car parse-status)
+			  offset)))))
 
 ;;;###autoload
 (define-derived-mode prototxt-mode fundamental-mode "prototxt"
