@@ -56,7 +56,7 @@
    ;; key
    '("\\(^ *.*?\\):" . (0 font-lock-variable-name-face))
    ;; value
-   '(": *\\(.*\\)" . (1 font-lock-type-face))))
+   '(": *\\([a-zA-Z0-9_.-]*\\)" . (1 font-lock-type-face))))
 
 (defvar prototxt-mode-font-lock-syntax-table
   (let ((st (make-syntax-table)))
