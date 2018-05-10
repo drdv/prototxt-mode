@@ -4,7 +4,7 @@
 
 ;; Author: Dimitar Dimitrov <mail.mitko@gmail.com>
 ;; URL: https://github.com/drdv/prototxt-mode
-;; Package-Version: 20180429.1
+;; Package-Version: 20180510.1
 ;; Package-X-Original-Version: 20180428.1
 ;; Package-Requires: ((emacs "24.3"))
 ;; Keywords: convenience, usability
