@@ -54,7 +54,7 @@
    ;; message
    '("\\([^{}]*\\) *{" . (1 font-lock-function-name-face))
    ;; key
-   '("\\([a-zA-Z0-9_.-]*\\) *:" . (0 font-lock-variable-name-face))
+   '("\\([a-zA-Z0-9_.-]*\\) *:" . (1 font-lock-variable-name-face))
    ;; value
    '(": *\\([a-zA-Z0-9_.-]*\\)" . (1 font-lock-type-face))))
 
