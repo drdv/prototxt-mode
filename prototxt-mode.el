@@ -52,9 +52,9 @@
 (defvar prototxt-mode-font-lock-keywords
   (list
    ;; message
-   '("\\(.*\\) *{" . (1 font-lock-function-name-face))
+   '("\\([^{}]*\\) *{" . (1 font-lock-function-name-face))
    ;; key
-   '("\\(^ *.*?\\):" . (0 font-lock-variable-name-face))
+   '("\\([a-zA-Z0-9_.-]*\\) *:" . (0 font-lock-variable-name-face))
    ;; value
    '(": *\\([a-zA-Z0-9_.-]*\\)" . (1 font-lock-type-face))))
 
